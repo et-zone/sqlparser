@@ -1,4 +1,4 @@
-# sqlparser [![Build Status](https://img.shields.io/travis/xwb1989/sqlparser.svg)](https://travis-ci.org/xwb1989/sqlparser) [![Coverage](https://img.shields.io/coveralls/xwb1989/sqlparser.svg)](https://coveralls.io/github/xwb1989/sqlparser) [![Report card](https://goreportcard.com/badge/github.com/xwb1989/sqlparser)](https://goreportcard.com/report/github.com/xwb1989/sqlparser) [![GoDoc](https://godoc.org/github.com/xwb1989/sqlparser?status.svg)](https://godoc.org/github.com/xwb1989/sqlparser)
+# sqlparser [![Build Status](https://img.shields.io/travis/Zekiee/sqlparser.svg)](https://travis-ci.org/Zekiee/sqlparser) [![Coverage](https://img.shields.io/coveralls/Zekiee/sqlparser.svg)](https://coveralls.io/github/Zekiee/sqlparser) [![Report card](https://goreportcard.com/badge/github.com/Zekiee/sqlparser)](https://goreportcard.com/report/github.com/Zekiee/sqlparser) [![GoDoc](https://godoc.org/github.com/Zekiee/sqlparser?status.svg)](https://godoc.org/github.com/Zekiee/sqlparser)
 
 Go package for parsing MySQL SQL queries.
 
@@ -13,7 +13,7 @@ It applies the same LICENSE as vitessio/vitess.
 
 ```go
 import (
-    "github.com/xwb1989/sqlparser"
+    "github.com/Zekiee/sqlparser"
 )
 ```
 
@@ -49,7 +49,7 @@ for {
 }
 ```
 
-See [parse_test.go](https://github.com/xwb1989/sqlparser/blob/master/parse_test.go) for more examples, or read the [godoc](https://godoc.org/github.com/xwb1989/sqlparser).
+See [parse_test.go](https://github.com/Zekiee/sqlparser/blob/master/parse_test.go) for more examples, or read the [godoc](https://godoc.org/github.com/Zekiee/sqlparser).
 
 
 ## Porting Instructions
@@ -61,7 +61,7 @@ You only need the below if you plan to try and keep this library up to date with
 ```bash
 shopt -s nullglob
 VITESS=${GOPATH?}/src/vitess.io/vitess/go/
-XWB1989=${GOPATH?}/src/github.com/xwb1989/sqlparser/
+Zekiee=${GOPATH?}/src/github.com/Zekiee/sqlparser/
 
 # Create patches for everything that changed
 LASTIMPORT=1b7879cb91f1dfe1a2dfa06fea96e951e3a7aec5
@@ -71,11 +71,11 @@ for path in ${VITESS?}/{vt/sqlparser,sqltypes,bytes2,hack}; do
 done;
 
 # Apply patches to the dependencies
-cd ${XWB1989?}
+cd ${Zekiee?}
 git am --directory dependency -p2 ${VITESS?}/{sqltypes,bytes2,hack}/*.patch
 
 # Apply the main patches to the repo
-cd ${XWB1989?}
+cd ${Zekiee?}
 git am -p4 ${VITESS?}/vt/sqlparser/*.patch
 
 # If you encounter diff failures, manually fix them with
@@ -96,9 +96,9 @@ TODO: Change these instructions to use git to copy the files, that'll make later
 
 ```bash
 VITESS=${GOPATH?}/src/vitess.io/vitess/go/
-XWB1989=${GOPATH?}/src/github.com/xwb1989/sqlparser/
+Zekiee=${GOPATH?}/src/github.com/Zekiee/sqlparser/
 
-cd ${XWB1989?}
+cd ${Zekiee?}
 
 # Copy all the code
 cp -pr ${VITESS?}/vt/sqlparser/ .
@@ -112,8 +112,8 @@ rm dependency/sqltypes/arithmetic.go dependency/sqltypes/arithmetic_test.go depe
 # Some automated fixes
 
 # Fix imports
-sed -i '.bak' 's_vitess.io/vitess/go/vt/proto/query_github.com/xwb1989/sqlparser/dependency/querypb_g' *.go dependency/sqltypes/*.go
-sed -i '.bak' 's_vitess.io/vitess/go/_github.com/xwb1989/sqlparser/dependency/_g' *.go dependency/sqltypes/*.go
+sed -i '.bak' 's_vitess.io/vitess/go/vt/proto/query_github.com/Zekiee/sqlparser/dependency/querypb_g' *.go dependency/sqltypes/*.go
+sed -i '.bak' 's_vitess.io/vitess/go/_github.com/Zekiee/sqlparser/dependency/_g' *.go dependency/sqltypes/*.go
 
 # Copy the proto, but basically drop everything we don't want
 cp -pr ${VITESS?}/vt/proto/query dependency/querypb
@@ -135,16 +135,16 @@ sed -i '.bak' 's/vterrors.New([^,]*, /errors.New(/g' *.go dependency/sqltypes/*.
 
 ```bash
 VITESS=${GOPATH?}/src/vitess.io/vitess/go/
-XWB1989=${GOPATH?}/src/github.com/xwb1989/sqlparser/
+Zekiee=${GOPATH?}/src/github.com/Zekiee/sqlparser/
 
-cd ${XWB1989?}
+cd ${Zekiee?}
 
 # Test, fix and repeat
 go test ./...
 
 # Finally make some diffs (for later reference)
-diff -u ${VITESS?}/sqltypes/        ${XWB1989?}/dependency/sqltypes/ > ${XWB1989?}/patches/sqltypes.patch
-diff -u ${VITESS?}/bytes2/          ${XWB1989?}/dependency/bytes2/   > ${XWB1989?}/patches/bytes2.patch
-diff -u ${VITESS?}/vt/proto/query/  ${XWB1989?}/dependency/querypb/  > ${XWB1989?}/patches/querypb.patch
-diff -u ${VITESS?}/vt/sqlparser/    ${XWB1989?}/                     > ${XWB1989?}/patches/sqlparser.patch
+diff -u ${VITESS?}/sqltypes/        ${Zekiee?}/dependency/sqltypes/ > ${Zekiee?}/patches/sqltypes.patch
+diff -u ${VITESS?}/bytes2/          ${Zekiee?}/dependency/bytes2/   > ${Zekiee?}/patches/bytes2.patch
+diff -u ${VITESS?}/vt/proto/query/  ${Zekiee?}/dependency/querypb/  > ${Zekiee?}/patches/querypb.patch
+diff -u ${VITESS?}/vt/sqlparser/    ${Zekiee?}/                     > ${Zekiee?}/patches/sqlparser.patch
 ```
