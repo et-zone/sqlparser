@@ -19,9 +19,9 @@ package sqlparser
 import (
 	"fmt"
 
-	"github.com/Zekiee/sqlparser/dependency/sqltypes"
+	"github.com/et-zone/sqlparser/dependency/sqltypes"
 
-	"github.com/Zekiee/sqlparser/dependency/querypb"
+	"github.com/et-zone/sqlparser/dependency/querypb"
 )
 
 // Normalize changes the statement to use bind values, and

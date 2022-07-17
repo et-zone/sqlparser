@@ -21,8 +21,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/Zekiee/sqlparser/dependency/querypb"
-	"github.com/Zekiee/sqlparser/dependency/sqltypes"
+	"github.com/et-zone/sqlparser/dependency/querypb"
+	"github.com/et-zone/sqlparser/dependency/sqltypes"
 )
 
 func TestNormalize(t *testing.T) {

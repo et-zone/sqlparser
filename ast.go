@@ -25,8 +25,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/Zekiee/sqlparser/dependency/querypb"
-	"github.com/Zekiee/sqlparser/dependency/sqltypes"
+	"github.com/et-zone/sqlparser/dependency/querypb"
+	"github.com/et-zone/sqlparser/dependency/sqltypes"
 )
 
 // Instructions for creating new types: If a type

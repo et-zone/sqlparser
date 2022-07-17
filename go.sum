@@ -1,7 +1,7 @@
 github.com/HdrHistogram/hdrhistogram-go v1.0.1 h1:GX8GAYDuhlFQnI2fRDHQhTlkHMz8bEn0jTI6LJU0mpw=
 github.com/HdrHistogram/hdrhistogram-go v1.0.1/go.mod h1:BWJ+nMSHY3L41Zj7CA3uXnloDp7xxV0YvstAE7nKTaM=
-github.com/Zekiee/sqlparser v0.0.0-20201126102006-4e768483a5d0 h1:BqCqN8wn3hIXoaN3bDyFPrm3AFJS0P91VkCQLUu3Mcs=
-github.com/Zekiee/sqlparser v0.0.0-20201126102006-4e768483a5d0/go.mod h1:r9STwtXNy73/PboGZavCNAaTiGhU0QEIyUXVDUmMYt8=
+github.com/et-zone/sqlparser v0.0.0-20201126102006-4e768483a5d0 h1:BqCqN8wn3hIXoaN3bDyFPrm3AFJS0P91VkCQLUu3Mcs=
+github.com/et-zone/sqlparser v0.0.0-20201126102006-4e768483a5d0/go.mod h1:r9STwtXNy73/PboGZavCNAaTiGhU0QEIyUXVDUmMYt8=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

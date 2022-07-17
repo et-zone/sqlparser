@@ -21,7 +21,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/Zekiee/sqlparser/dependency/sqltypes"
+	"github.com/et-zone/sqlparser/dependency/sqltypes"
 )
 
 func TestPreview(t *testing.T) {

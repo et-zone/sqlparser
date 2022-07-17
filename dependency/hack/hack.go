@@ -59,21 +59,18 @@ func (sa *StringArena) SpaceLeft() int {
 	return cap(sa.buf) - len(sa.buf)
 }
 
+
+// StringPointer returns &s[0], which is not allowed in go
+func StringPointer(s string) unsafe.Pointer {
+	pstring := (*reflect.StringHeader)(unsafe.Pointer(&s))
+	return unsafe.Pointer(pstring.Data)
+}
+
 // String force casts a []byte to a string.
 // USE AT YOUR OWN RISK
 func String(b []byte) (s string) {
 	if len(b) == 0 {
 		return ""
 	}
-	pbytes := (*reflect.SliceHeader)(unsafe.Pointer(&b))
-	pstring := (*reflect.StringHeader)(unsafe.Pointer(&s))
-	pstring.Data = pbytes.Data
-	pstring.Len = pbytes.Len
-	return
-}
-
-// StringPointer returns &s[0], which is not allowed in go
-func StringPointer(s string) unsafe.Pointer {
-	pstring := (*reflect.StringHeader)(unsafe.Pointer(&s))
-	return unsafe.Pointer(pstring.Data)
+	return *(*string)(unsafe.Pointer(&b))
 }

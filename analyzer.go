@@ -25,7 +25,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/Zekiee/sqlparser/dependency/sqltypes"
+	"github.com/et-zone/sqlparser/dependency/sqltypes"
 )
 
 // These constants are used to identify the SQL statement type.

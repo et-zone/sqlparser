@@ -19,7 +19,7 @@ package sqltypes
 import (
 	"fmt"
 
-	"github.com/Zekiee/sqlparser/dependency/querypb"
+	"github.com/et-zone/sqlparser/dependency/querypb"
 )
 
 // This file provides wrappers and support
